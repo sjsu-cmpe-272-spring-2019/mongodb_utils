@@ -28,6 +28,8 @@ if __name__ == "__main__":
         if len(batch) >= BATCH_SIZE:
             db[collection].insert_many(batch)
             batch.clear()
+    if batch:
+        db[collection].insert_many(batch)
 
 
     
